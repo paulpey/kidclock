@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: '/kidclock/',
   build: {
-    target: 'es2015',
+    target: ['es2020', 'safari14'],
   },
   plugins: [react(), tailwindcss()],
   test: {
