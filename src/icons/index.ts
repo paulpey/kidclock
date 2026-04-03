@@ -1,0 +1,11 @@
+export { SunIcon } from './SunIcon';
+export { MoonIcon } from './MoonIcon';
+export { BreakfastIcon } from './BreakfastIcon';
+export { ToothbrushIcon } from './ToothbrushIcon';
+export { DressIcon } from './DressIcon';
+export { SchoolBagIcon } from './SchoolBagIcon';
+export { SnackIcon } from './SnackIcon';
+export { BathIcon } from './BathIcon';
+export { DinnerIcon } from './DinnerIcon';
+export { StoryIcon } from './StoryIcon';
+export { SleepIcon } from './SleepIcon';

@@ -1,0 +1,22 @@
+{
+  "name": "KidClock",
+  "short_name": "KidClock",
+  "description": "Horloge visuelle pour enfants",
+  "start_url": "/kidclock/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0d0d2b",
+  "theme_color": "#4a3f8a",
+  "icons": [
+    {
+      "src": "/kidclock/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/kidclock/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
