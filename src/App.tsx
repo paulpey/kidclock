@@ -69,17 +69,20 @@ export default function App() {
           progress={nightProgress}
           sleepTime={dayConfig.sleepTime}
           wakeTime={dayConfig.wakeTime}
+          time={time}
         />
       ) : (
         <DayScreen
           currentRoutine={currentRoutine}
           upcomingRoutines={upcomingRoutines}
+          time={time}
         />
       )}
       {/* Secret tap zone */}
       <div
-        className="absolute bottom-0 right-0 w-[80px] h-[80px]"
-        onClick={handleSecretTap}
+        className="absolute bottom-0 right-0 w-[80px] h-[80px] z-50"
+        onPointerDown={handleSecretTap}
+        style={{ touchAction: 'manipulation' }}
       />
     </div>
   );

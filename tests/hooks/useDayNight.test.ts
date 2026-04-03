@@ -5,7 +5,7 @@ import { DEFAULT_CONFIG } from '../../src/utils/defaults';
 import { AppConfig, TimeState } from '../../src/types/config';
 
 function makeTime(hours: number, minutes: number, dayOfWeek = 1): TimeState {
-  return { hours, minutes, dayOfWeek, isWeekend: dayOfWeek === 0 || dayOfWeek === 6 };
+  return { hours, minutes, date: 3, month: 3, dayOfWeek, isWeekend: dayOfWeek === 0 || dayOfWeek === 6 };
 }
 
 describe('useDayNight - night detection', () => {

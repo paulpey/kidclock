@@ -7,6 +7,8 @@ function getTimeState(): TimeState {
   return {
     hours: now.getHours(),
     minutes: now.getMinutes(),
+    date: now.getDate(),
+    month: now.getMonth(),
     dayOfWeek,
     isWeekend: dayOfWeek === 0 || dayOfWeek === 6,
   };

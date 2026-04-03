@@ -1,19 +1,28 @@
-import type { Routine } from '../../types/config';
+import type { Routine, TimeState } from '../../types/config';
 import { OwlAwake } from './OwlAwake';
 import { CurrentRoutine } from './CurrentRoutine';
 import { UpcomingRoutines } from './UpcomingRoutines';
+import { TimeDisplay } from './TimeDisplay';
 
 interface Props {
   currentRoutine: Routine | null;
   upcomingRoutines: Routine[];
+  time: TimeState;
 }
 
-export function DayScreen({ currentRoutine, upcomingRoutines }: Props) {
+export function DayScreen({ currentRoutine, upcomingRoutines, time }: Props) {
   return (
     <div
       className="w-full h-full flex items-center justify-center relative overflow-hidden"
       style={{ background: 'linear-gradient(to bottom, #FFF8E7, #FFE8C8)' }}
     >
+      {/* Time display */}
+      <TimeDisplay
+        hours={time.hours} minutes={time.minutes}
+        date={time.date} month={time.month}
+        dayOfWeek={time.dayOfWeek} variant="day"
+      />
+
       {/* Sun decoration */}
       <div className="absolute top-[-20px] right-[-20px] opacity-20">
         <svg width="160" height="160" viewBox="0 0 64 64" fill="none">

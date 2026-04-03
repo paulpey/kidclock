@@ -1,11 +1,14 @@
 import { useMemo } from 'react';
+import type { TimeState } from '../../types/config';
 import { OwlSleeping } from './OwlSleeping';
 import { NightProgressBar } from './NightProgressBar';
+import { TimeDisplay } from './TimeDisplay';
 
 interface Props {
   progress: number;
   sleepTime: string;
   wakeTime: string;
+  time: TimeState;
 }
 
 function Star({ x, y, delay }: { x: number; y: number; delay: number }) {
@@ -22,7 +25,7 @@ function Star({ x, y, delay }: { x: number; y: number; delay: number }) {
   );
 }
 
-export function NightScreen({ progress, sleepTime, wakeTime }: Props) {
+export function NightScreen({ progress, sleepTime, wakeTime, time }: Props) {
   const stars = useMemo(() =>
     Array.from({ length: 28 }, () => ({
       x: Math.random() * 90 + 5,
@@ -45,6 +48,13 @@ export function NightScreen({ progress, sleepTime, wakeTime }: Props) {
       {stars.map((s, i) => (
         <Star key={i} x={s.x} y={s.y} delay={s.delay} />
       ))}
+
+      {/* Time display */}
+      <TimeDisplay
+        hours={time.hours} minutes={time.minutes}
+        date={time.date} month={time.month}
+        dayOfWeek={time.dayOfWeek} variant="night"
+      />
 
       {/* Moon */}
       <div className="absolute top-6 left-8 opacity-30">

@@ -25,6 +25,8 @@ export interface AppConfig {
 export interface TimeState {
   hours: number;
   minutes: number;
-  dayOfWeek: number; // 0=Sunday, 6=Saturday
+  date: number;       // 1-31
+  month: number;      // 0-11
+  dayOfWeek: number;  // 0=Sunday, 6=Saturday
   isWeekend: boolean;
 }
