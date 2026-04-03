@@ -49,13 +49,19 @@ export default function App() {
         config={config}
         onSave={(newConfig) => {
           saveConfig(newConfig);
+          setSimulatedTime(null);
           setMode('child');
         }}
         onClose={() => {
+          setSimulatedTime(null);
           setMode('child');
         }}
         simulatedTime={simulatedTime}
         onSimulate={setSimulatedTime}
+        onPreview={(t) => {
+          setSimulatedTime(t);
+          setMode('child');
+        }}
       />
     );
   }
@@ -76,6 +82,21 @@ export default function App() {
           time={time}
         />
       )}
+
+      {/* Simulation banner */}
+      {simulatedTime && (
+        <div
+          className="absolute top-0 left-0 right-0 flex items-center justify-center gap-4 py-2 bg-[#7F77DD] text-white text-sm z-40 cursor-pointer"
+          onClick={() => {
+            setSimulatedTime(null);
+            setMode('parent');
+          }}
+        >
+          <span>Simulation : {simulatedTime}</span>
+          <span className="underline">Retour config</span>
+        </div>
+      )}
+
       {/* Secret tap zone */}
       <div
         className="absolute bottom-0 right-0 w-[80px] h-[80px] z-50"

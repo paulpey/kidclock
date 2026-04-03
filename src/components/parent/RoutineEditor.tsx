@@ -10,12 +10,16 @@ interface Props {
 const ICON_OPTIONS: RoutineIconType[] = [
   'wake', 'breakfast', 'teeth', 'dress', 'school',
   'snack', 'bath', 'dinner', 'story', 'sleep',
+  'play', 'homework', 'walk', 'sport', 'skating',
+  'cleaning', 'tv', 'nap', 'handwash',
 ];
 
 const ICON_LABELS: Record<RoutineIconType, string> = {
   wake: 'Réveil', breakfast: 'Déjeuner', teeth: 'Dents', dress: 'Habiller',
   school: 'École', snack: 'Goûter', bath: 'Bain', dinner: 'Dîner',
-  story: 'Histoire', sleep: 'Dodo',
+  story: 'Histoire', sleep: 'Dodo', play: 'Jeux', homework: 'Devoirs',
+  walk: 'Balade', sport: 'Sport', skating: 'Patinage', cleaning: 'Rangement',
+  tv: 'Télé', nap: 'Sieste', handwash: 'Mains',
 };
 
 export function RoutineEditor({ config, onChange }: Props) {
@@ -50,7 +54,9 @@ export function RoutineEditor({ config, onChange }: Props) {
     const iconColor: Record<RoutineIconType, string> = {
       wake: '#FFD93D', breakfast: '#FF8C42', teeth: '#5DCAA5', dress: '#85B7EB',
       school: '#AFA9EC', snack: '#F0997B', bath: '#85B7EB', dinner: '#FF8C42',
-      story: '#ED93B1', sleep: '#7F77DD',
+      story: '#ED93B1', sleep: '#7F77DD', play: '#FF6B6B', homework: '#85B7EB',
+      walk: '#5DCAA5', sport: '#4ECDC4', skating: '#AFA9EC', cleaning: '#FFD93D',
+      tv: '#ED93B1', nap: '#FFD93D', handwash: '#85B7EB',
     };
     const newRoutine: Routine = {
       id: crypto.randomUUID(),

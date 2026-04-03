@@ -10,9 +10,10 @@ interface Props {
   onClose: () => void;
   simulatedTime: string | null;
   onSimulate: (time: string | null) => void;
+  onPreview: (time: string) => void;
 }
 
-export function ParentPanel({ config, onSave, onClose, simulatedTime, onSimulate }: Props) {
+export function ParentPanel({ config, onSave, onClose, simulatedTime, onSimulate, onPreview }: Props) {
   const [draft, setDraft] = useState<AppConfig>(config);
 
   return (
@@ -24,7 +25,11 @@ export function ParentPanel({ config, onSave, onClose, simulatedTime, onSimulate
 
         <TimeConfig config={draft} onChange={setDraft} />
         <RoutineEditor config={draft} onChange={setDraft} />
-        <SimulatorBar simulatedTime={simulatedTime} onSimulate={onSimulate} />
+        <SimulatorBar
+          simulatedTime={simulatedTime}
+          onSimulate={onSimulate}
+          onPreview={onPreview}
+        />
 
         <div className="flex gap-4 pt-4 border-t border-white/10">
           <button

@@ -1,6 +1,8 @@
 export type RoutineIconType =
   | 'wake' | 'breakfast' | 'teeth' | 'dress' | 'school'
-  | 'snack' | 'bath' | 'dinner' | 'story' | 'sleep';
+  | 'snack' | 'bath' | 'dinner' | 'story' | 'sleep'
+  | 'play' | 'homework' | 'walk' | 'sport' | 'skating'
+  | 'cleaning' | 'tv' | 'nap' | 'handwash';
 
 export interface Routine {
   id: string;
