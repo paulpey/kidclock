@@ -13,25 +13,25 @@ function TimeCard({ title, wakeTime, sleepTime, onWakeChange, onSleepChange }: {
   onSleepChange: (t: string) => void;
 }) {
   return (
-    <div className="flex-1 bg-white/5 rounded-xl p-4 border border-white/10">
-      <h3 className="text-[#C8B6FF] font-semibold mb-3">{title}</h3>
-      <div className="flex flex-col gap-3">
-        <label className="flex items-center justify-between text-sm text-white/70">
+    <div className="config-card">
+      <h3 className="section-title">{title}</h3>
+      <div className="config-field">
+        <label className="config-field">
           <span>Réveil</span>
           <input
             type="time"
             value={wakeTime}
             onChange={(e) => onWakeChange(e.target.value)}
-            className="bg-white/10 rounded px-2 py-1 text-white border border-white/20 outline-none"
+            className="time-input"
           />
         </label>
-        <label className="flex items-center justify-between text-sm text-white/70">
+        <label className="config-field">
           <span>Coucher</span>
           <input
             type="time"
             value={sleepTime}
             onChange={(e) => onSleepChange(e.target.value)}
-            className="bg-white/10 rounded px-2 py-1 text-white border border-white/20 outline-none"
+            className="time-input"
           />
         </label>
       </div>
@@ -41,7 +41,7 @@ function TimeCard({ title, wakeTime, sleepTime, onWakeChange, onSleepChange }: {
 
 export function TimeConfig({ config, onChange }: Props) {
   return (
-    <div className="flex gap-4">
+    <div className="config-row">
       <TimeCard
         title="Semaine"
         wakeTime={config.weekday.wakeTime}

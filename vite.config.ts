@@ -1,14 +1,13 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   base: '/kidclock/',
   build: {
-    target: ['es2020', 'safari14'],
+    target: ['es2018', 'safari12'],
   },
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
   test: {
     globals: true,
     environment: 'jsdom',

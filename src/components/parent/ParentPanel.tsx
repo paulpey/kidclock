@@ -17,10 +17,10 @@ export function ParentPanel({ config, onSave, onClose, simulatedTime, onSimulate
   const [draft, setDraft] = useState<AppConfig>(config);
 
   return (
-    <div className="w-full h-full bg-[#0d0d2b] overflow-y-auto">
-      <div className="max-w-2xl mx-auto p-6 space-y-6">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-[#C8B6FF]">Configuration</h1>
+    <div className="parent-panel">
+      <div className="parent-content">
+        <div>
+          <h1 className="parent-title">Configuration</h1>
         </div>
 
         <TimeConfig config={draft} onChange={setDraft} />
@@ -31,16 +31,16 @@ export function ParentPanel({ config, onSave, onClose, simulatedTime, onSimulate
           onPreview={onPreview}
         />
 
-        <div className="flex gap-4 pt-4 border-t border-white/10">
+        <div className="parent-footer">
           <button
             onClick={onClose}
-            className="flex-1 py-3 rounded-xl bg-white/10 text-white/60 font-medium hover:bg-white/20"
+            className="footer-btn footer-btn-close"
           >
             Fermer
           </button>
           <button
             onClick={() => onSave(draft)}
-            className="flex-1 py-3 rounded-xl bg-[#7F77DD] text-white font-medium hover:bg-[#9F8FEF]"
+            className="footer-btn footer-btn-save"
           >
             Sauvegarder
           </button>

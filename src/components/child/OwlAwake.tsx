@@ -1,6 +1,6 @@
 export function OwlAwake() {
   return (
-    <div className="animate-[sway_3s_ease-in-out_infinite]">
+    <div className="owl-awake">
       <svg width="140" height="180" viewBox="0 0 140 180" fill="none">
         {/* Body */}
         <ellipse cx="70" cy="110" rx="40" ry="50" fill="#8B7355" />

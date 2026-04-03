@@ -1,6 +1,6 @@
 export function OwlSleeping() {
   return (
-    <div className="relative animate-[breathing_5s_ease-in-out_infinite]">
+    <div className="owl-sleeping">
       <svg width="200" height="140" viewBox="0 0 200 140" fill="none">
         {/* Bed frame */}
         <rect x="20" y="60" width="160" height="60" rx="10" fill="#4a3f8a" opacity="0.5" />
@@ -28,10 +28,10 @@ export function OwlSleeping() {
         <circle cx="78" cy="8" r="4" fill="#FFD93D" />
       </svg>
       {/* Zzz */}
-      <div className="absolute top-0 right-4 flex flex-col items-start">
-        <span className="text-[#C8B6FF] text-2xl font-bold animate-[float_3s_ease-in-out_infinite]" style={{ opacity: 0.8 }}>Z</span>
-        <span className="text-[#C8B6FF] text-xl font-bold animate-[float_3s_ease-in-out_infinite_0.5s]" style={{ opacity: 0.5, marginLeft: 8 }}>z</span>
-        <span className="text-[#C8B6FF] text-base font-bold animate-[float_3s_ease-in-out_infinite_1s]" style={{ opacity: 0.3, marginLeft: 16 }}>z</span>
+      <div className="zzz">
+        <span style={{ opacity: 0.8, fontSize: '24px', animation: 'float 3s ease-in-out infinite' }}>Z</span>
+        <span style={{ opacity: 0.5, marginLeft: 8, fontSize: '20px', animation: 'float 3s ease-in-out infinite 0.5s' }}>z</span>
+        <span style={{ opacity: 0.3, marginLeft: 16, fontSize: '16px', animation: 'float 3s ease-in-out infinite 1s' }}>z</span>
       </div>
     </div>
   );

@@ -72,39 +72,39 @@ export function RoutineEditor({ config, onChange }: Props) {
   };
 
   return (
-    <div className="space-y-2">
-      <h3 className="text-[#C8B6FF] font-semibold mb-3">Routines</h3>
+    <div>
+      <h3 className="section-title">Routines</h3>
       {config.routines.map((r, idx) => (
-        <div key={r.id} className="flex items-center gap-2 bg-white/5 rounded-lg p-2 border border-white/10">
-          <div className="flex flex-col gap-0.5">
+        <div key={r.id} className="routine-row">
+          <div className="routine-row-arrows">
             <button
               onClick={() => moveRoutine(r.id, -1)}
               disabled={idx === 0}
-              className="text-white/40 text-xs hover:text-white disabled:opacity-20 leading-none"
+              className="arrow-btn"
             >
               ▲
             </button>
             <button
               onClick={() => moveRoutine(r.id, 1)}
               disabled={idx === config.routines.length - 1}
-              className="text-white/40 text-xs hover:text-white disabled:opacity-20 leading-none"
+              className="arrow-btn"
             >
               ▼
             </button>
           </div>
-          <div className="w-8 h-8 flex-shrink-0">
+          <div className="routine-row-icon">
             <RoutineIcon icon={r.icon} size={32} />
           </div>
-          <span className="text-white/80 text-sm flex-1 truncate">{r.label}</span>
+          <span className="routine-row-label">{r.label}</span>
           <input
             type="time"
             value={r.time}
             onChange={(e) => updateRoutine(r.id, { time: e.target.value })}
-            className="bg-white/10 rounded px-2 py-1 text-white text-xs border border-white/20 outline-none w-24"
+            className="time-input routine-row-time"
           />
           <button
             onClick={() => removeRoutine(r.id)}
-            className="text-red-400/60 hover:text-red-400 text-sm px-2"
+            className="delete-btn"
           >
             ✕
           </button>
@@ -112,46 +112,44 @@ export function RoutineEditor({ config, onChange }: Props) {
       ))}
 
       {adding ? (
-        <div className="bg-white/5 rounded-lg p-3 border border-white/10 space-y-3">
-          <div className="flex gap-2 flex-wrap">
+        <div className="add-form">
+          <div className="icon-picker">
             {ICON_OPTIONS.map((icon) => (
               <button
                 key={icon}
                 onClick={() => setNewIcon(icon)}
-                className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                  newIcon === icon ? 'bg-[#7F77DD]/40 ring-2 ring-[#9F8FEF]' : 'bg-white/5'
-                }`}
+                className={`icon-option${newIcon === icon ? ' selected' : ''}`}
                 title={ICON_LABELS[icon]}
               >
                 <RoutineIcon icon={icon} size={28} />
               </button>
             ))}
           </div>
-          <div className="flex gap-2">
+          <div className="add-form-row">
             <input
               type="text"
               placeholder="Nom de la routine"
               value={newLabel}
               onChange={(e) => setNewLabel(e.target.value)}
-              className="flex-1 bg-white/10 rounded px-3 py-1.5 text-white text-sm border border-white/20 outline-none placeholder:text-white/30"
+              className="text-input"
               autoFocus
             />
             <input
               type="time"
               value={newTime}
               onChange={(e) => setNewTime(e.target.value)}
-              className="bg-white/10 rounded px-2 py-1.5 text-white text-sm border border-white/20 outline-none w-28"
+              className="time-input"
             />
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => setAdding(false)} className="px-4 py-1.5 rounded bg-white/10 text-white/60 text-sm">Annuler</button>
-            <button onClick={addRoutine} className="px-4 py-1.5 rounded bg-[#7F77DD] text-white text-sm">Ajouter</button>
+          <div className="add-form-row">
+            <button onClick={() => setAdding(false)} className="btn btn-ghost">Annuler</button>
+            <button onClick={addRoutine} className="btn btn-primary">Ajouter</button>
           </div>
         </div>
       ) : (
         <button
           onClick={() => setAdding(true)}
-          className="w-full py-2 rounded-lg border border-dashed border-white/20 text-white/40 text-sm hover:text-white/60 hover:border-white/40"
+          className="add-routine-btn"
         >
           + Ajouter une routine
         </button>

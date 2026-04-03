@@ -7,17 +7,17 @@ interface Props {
 
 export function CurrentRoutine({ routine }: Props) {
   return (
-    <div className="flex flex-col items-center animate-[scaleIn_0.4s_ease-out]">
+    <div className="current-routine">
       <div
-        className="w-[100px] h-[100px] rounded-full flex items-center justify-center"
+        className="routine-circle"
         style={{ backgroundColor: routine.color + '30' }}
       >
         <RoutineIcon icon={routine.icon} size={90} />
       </div>
-      <span className="mt-3 text-[22px] font-semibold text-[#4a3f8a]">
+      <span className="routine-label">
         {routine.label}
       </span>
-      <span className="text-[13px] text-[#888780] mt-1">
+      <span className="routine-time">
         {routine.time}
       </span>
     </div>

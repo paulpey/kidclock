@@ -8,24 +8,24 @@ interface Props {
 
 export function NightProgressBar({ progress, sleepTime, wakeTime }: Props) {
   return (
-    <div className="w-full px-8 pb-6">
-      <div className="flex items-center gap-3">
-        <div className="flex flex-col items-center">
+    <div className="progress-bar-container">
+      <div className="progress-bar-row">
+        <div className="progress-icon">
           <MoonIcon size={28} />
-          <span className="text-[10px] text-[#C8B6FF] opacity-60 mt-1">{sleepTime}</span>
+          <span className="progress-time">{sleepTime}</span>
         </div>
-        <div className="flex-1 h-3 rounded-full bg-white/10 overflow-hidden">
+        <div className="progress-track">
           <div
-            className="h-full rounded-full transition-all duration-1000"
+            className="progress-fill"
             style={{
               width: `${progress * 100}%`,
               background: 'linear-gradient(90deg, #4a3f8a, #9F8FEF)',
             }}
           />
         </div>
-        <div className="flex flex-col items-center">
+        <div className="progress-icon">
           <SunIcon size={28} />
-          <span className="text-[10px] text-[#C8B6FF] opacity-60 mt-1">{wakeTime}</span>
+          <span className="progress-time">{wakeTime}</span>
         </div>
       </div>
     </div>

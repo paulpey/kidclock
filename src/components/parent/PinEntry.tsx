@@ -22,8 +22,8 @@ export function PinEntry({ correctPin, onSuccess, onCancel }: Props) {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center bg-[#1a1a3e] gap-6">
-      <h2 className="text-2xl font-semibold text-[#C8B6FF]">Mode Parent</h2>
+    <div className="pin-screen">
+      <h2 className="pin-title">Mode Parent</h2>
       <input
         ref={inputRef}
         type="password"
@@ -35,21 +35,21 @@ export function PinEntry({ correctPin, onSuccess, onCancel }: Props) {
           setPin(e.target.value.replace(/\D/g, '').slice(0, 4));
         }}
         onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
-        className="w-40 text-center text-2xl py-3 rounded-xl bg-white/10 text-white border border-white/20 outline-none focus:border-[#9F8FEF]"
+        className="pin-input"
         placeholder="____"
         autoFocus
       />
-      {error && <p className="text-red-400 text-sm">Code incorrect</p>}
-      <div className="flex gap-4">
+      {error && <p className="pin-error">Code incorrect</p>}
+      <div className="pin-buttons">
         <button
           onClick={onCancel}
-          className="px-6 py-2 rounded-lg bg-white/10 text-[#C8B6FF] text-sm hover:bg-white/20"
+          className="btn btn-ghost"
         >
           Retour
         </button>
         <button
           onClick={handleSubmit}
-          className="px-6 py-2 rounded-lg bg-[#7F77DD] text-white text-sm hover:bg-[#9F8FEF]"
+          className="btn btn-primary"
         >
           Valider
         </button>

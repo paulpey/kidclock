@@ -22,11 +22,11 @@ export function TimeDisplay({ hours, minutes, date, month, dayOfWeek, variant }:
 
   return (
     <div
-      className="absolute top-4 left-6 z-10"
+      className="time-display"
       style={{ color, opacity }}
     >
-      <div className="text-[16px] font-medium leading-tight">{timeStr}</div>
-      <div className="text-[12px] leading-tight">{dateStr}</div>
+      <div className="time-display-clock">{timeStr}</div>
+      <div className="time-display-date">{dateStr}</div>
     </div>
   );
 }

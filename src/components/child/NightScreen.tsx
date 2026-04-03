@@ -14,7 +14,7 @@ interface Props {
 function Star({ x, y, delay }: { x: number; y: number; delay: number }) {
   return (
     <div
-      className="absolute w-1.5 h-1.5 rounded-full bg-[#FFF8E7]"
+      className="star"
       style={{
         left: `${x}%`,
         top: `${y}%`,
@@ -41,7 +41,7 @@ export function NightScreen({ progress, sleepTime, wakeTime, time }: Props) {
 
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-between relative overflow-hidden"
+      className="night-screen"
       style={{ background: `linear-gradient(to bottom, ${bgTop}, ${bgBottom})` }}
     >
       {/* Stars */}
@@ -57,17 +57,17 @@ export function NightScreen({ progress, sleepTime, wakeTime, time }: Props) {
       />
 
       {/* Moon */}
-      <div className="absolute top-6 left-8 opacity-30">
+      <div className="moon-decoration">
         <svg width="50" height="50" viewBox="0 0 64 64" fill="none">
           <path d="M40 12 A20 20 0 1 0 40 52 A16 16 0 1 1 40 12Z" fill="#E8E0C8" />
         </svg>
       </div>
 
       {/* Center content */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-4">
+      <div className="night-center">
         <OwlSleeping />
-        <p className="text-[22px] text-[#C8B6FF] text-center">On dort encore...</p>
-        <p className="text-[14px] text-[#C8B6FF] opacity-50 text-center">Chut, le hibou fait dodo</p>
+        <p className="night-text">On dort encore...</p>
+        <p className="night-subtext">Chut, le hibou fait dodo</p>
       </div>
 
       {/* Progress bar */}

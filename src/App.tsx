@@ -67,7 +67,7 @@ export default function App() {
   }
 
   return (
-    <div className="w-full h-full relative">
+    <div className="full-screen">
       {isNight ? (
         <NightScreen
           progress={nightProgress}
@@ -86,22 +86,21 @@ export default function App() {
       {/* Simulation banner */}
       {simulatedTime && (
         <div
-          className="absolute top-0 left-0 right-0 flex items-center justify-center gap-4 py-2 bg-[#7F77DD] text-white text-sm z-40 cursor-pointer"
+          className="sim-banner"
           onClick={() => {
             setSimulatedTime(null);
             setMode('parent');
           }}
         >
           <span>Simulation : {simulatedTime}</span>
-          <span className="underline">Retour config</span>
+          <span>Retour config</span>
         </div>
       )}
 
       {/* Secret tap zone */}
       <div
-        className="absolute bottom-0 right-0 w-[80px] h-[80px] z-50"
+        className="tap-zone"
         onPointerDown={handleSecretTap}
-        style={{ touchAction: 'manipulation' }}
       />
     </div>
   );
