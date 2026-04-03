@@ -49,11 +49,9 @@ export default function App() {
         config={config}
         onSave={(newConfig) => {
           saveConfig(newConfig);
-          setSimulatedTime(null);
           setMode('child');
         }}
         onClose={() => {
-          setSimulatedTime(null);
           setMode('child');
         }}
         simulatedTime={simulatedTime}
