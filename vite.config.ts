@@ -5,6 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   base: '/kidclock/',
+  build: {
+    target: 'es2015',
+  },
   plugins: [react(), tailwindcss()],
   test: {
     globals: true,

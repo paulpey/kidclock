@@ -59,7 +59,7 @@ export function RoutineEditor({ config, onChange }: Props) {
       tv: '#ED93B1', nap: '#FFD93D', handwash: '#85B7EB',
     };
     const newRoutine: Routine = {
-      id: crypto.randomUUID(),
+      id: Math.random().toString(36).slice(2) + Date.now().toString(36),
       icon: newIcon,
       label: newLabel.trim(),
       color: iconColor[newIcon],
